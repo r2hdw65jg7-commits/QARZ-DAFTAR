@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f1a">
+<title>Qarz Daftar — Game Club Boshqaruv Tizimi</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div id="app" class="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-logo">🎮</div>
+      <div class="brand-text">
+        <div class="brand-name" id="brandName">GAME CLUB</div>
+        <div class="brand-sub">Qarz daftar</div>
+      </div>
+      <button class="icon-btn sidebar-close" data-action="toggle-sidebar" title="Yopish">✕</button>
+    </div>
+
+    <nav class="nav" id="nav">
+      <div class="nav-group">Asosiy</div>
+      <a class="nav-item" href="#/dashboard" data-view="dashboard"><span class="ni">📊</span> Bosh sahifa</a>
+      <a class="nav-item" href="#/debts" data-view="debts"><span class="ni">📒</span> Qarzlar <span class="nav-badge" id="badgeDebts"></span></a>
+      <a class="nav-item" href="#/customers" data-view="customers"><span class="ni">👥</span> Mijozlar</a>
+      <a class="nav-item" href="#/payments" data-view="payments"><span class="ni">💵</span> To‘lovlar</a>
+
+      <div class="nav-group">Magazin</div>
+      <a class="nav-item" href="#/pos" data-view="pos"><span class="ni">🛒</span> Sotuv (Kassa)</a>
+      <a class="nav-item" href="#/sales" data-view="sales"><span class="ni">🧾</span> Sotuvlar tarixi</a>
+      <a class="nav-item" href="#/products" data-view="products"><span class="ni">📦</span> Mahsulotlar</a>
+      <a class="nav-item" href="#/stock" data-view="stock"><span class="ni">🏬</span> Ombor <span class="nav-badge warn" id="badgeStock"></span></a>
+      <a class="nav-item" href="#/suppliers" data-view="suppliers"><span class="ni">🚚</span> Yetkazib beruvchilar</a>
+
+      <div class="nav-group">Boshqaruv</div>
+      <a class="nav-item" href="#/cash" data-view="cash"><span class="ni">🏦</span> Kassa</a>
+      <a class="nav-item" href="#/reports" data-view="reports"><span class="ni">📈</span> Hisobotlar</a>
+      <a class="nav-item" href="#/audit" data-view="audit"><span class="ni">🕘</span> Tarix / Audit</a>
+      <a class="nav-item" href="#/settings" data-view="settings"><span class="ni">⚙️</span> Sozlamalar</a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="backup-chip" id="backupChip" data-action="goto-backup" title="Backup holati">
+        <span class="dot" id="backupDot"></span>
+        <span id="backupChipText">Backup: sozlanmagan</span>
+      </div>
+      <div class="version">v1.0.0 · offline</div>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" data-action="toggle-sidebar"></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" data-action="toggle-sidebar" title="Menyu">☰</button>
+      <div class="search-wrap">
+        <span class="search-ico">🔎</span>
+        <input id="globalSearch" class="search" type="search" placeholder="Qidiruv: ism, telefon, ID, summa, mahsulot…" autocomplete="off">
+        <div class="search-results" id="searchResults" hidden></div>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-primary" data-action="new-debt">+ Qarz</button>
+        <button class="btn btn-success" data-action="new-payment">+ To‘lov</button>
+        <button class="icon-btn" data-action="toggle-theme" id="themeBtn" title="Mavzu">🌙</button>
+        <div class="cashier-chip" data-action="open-cashier" title="Kassir">
+          <span class="ava" id="cashierAva">A</span><span id="cashierName">Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="view" id="view"><div class="loading">Yuklanmoqda…</div></section>
+  </main>
+</div>
+
+<div class="modal-root" id="modalRoot" hidden></div>
+<div class="toast-root" id="toastRoot"></div>
+<div id="printArea" class="print-area"></div>
+
+<script src="assets/js/core.js"></script>
+<script src="assets/js/backup.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/views-debt.js"></script>
+<script src="assets/js/views-shop.js"></script>
+<script src="assets/js/views-report.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

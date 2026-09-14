@@ -1,0 +1,47 @@
+{
+  "name": "qarz-daftar",
+  "version": "1.0.0",
+  "description": "Game Club va kompyuterxonalar uchun qarz, magazin, ombor va kassa boshqaruv tizimi",
+  "main": "electron/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "serve": "npx --yes serve . -l 5173",
+    "build:single": "node tools/build-single.js",
+    "test": "node tests/run-tests.js && node tests/backup-test.js",
+    "dist": "electron-builder --win",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "uz.gameclub.qarzdaftar",
+    "productName": "Qarz Daftar",
+    "files": [
+      "index.html",
+      "manifest.webmanifest",
+      "sw.js",
+      "assets/**/*",
+      "electron/**/*",
+      "tools/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icons/icon-512.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Qarz Daftar"
+    }
+  }
+}

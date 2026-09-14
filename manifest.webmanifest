@@ -1,0 +1,25 @@
+{
+  "name": "Qarz Daftar — Game Club Boshqaruv Tizimi",
+  "short_name": "Qarz Daftar",
+  "description": "Game Club va kompyuterxonalar uchun qarz, magazin, ombor va kassa boshqaruv tizimi",
+  "lang": "uz",
+  "dir": "ltr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0f1a",
+  "theme_color": "#0b0f1a",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "Qarzlar", "url": "#/debts" },
+    { "name": "Sotuv (Kassa)", "url": "#/pos" },
+    { "name": "Hisobotlar", "url": "#/reports" }
+  ]
+}
