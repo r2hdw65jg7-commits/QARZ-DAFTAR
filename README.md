@@ -102,14 +102,19 @@ cd <repo>
 git add . && git commit -m "Qarz Daftar" && git push
 ```
 
-### 2-qadam. GitHub Pages'ni yoqish
+### 2-qadam. GitHub Pages'ni yoqish (majburiy, bir marta)
 1. Repo → **Settings** → **Pages**
-2. **Source**: `GitHub Actions` ni tanlang
-3. `main` (yoki `master`) branchga push qiling — `.github/workflows/pages.yml` avtomatik ishga tushadi
-   (avval testlar, keyin joylash)
+2. **Build and deployment → Source**: `GitHub Actions` ni tanlang
+3. Repo → **Actions** → **GitHub Pages'ga joylash** → **Run workflow** (yoki `main` ga yangi push qiling)
 4. 1–2 daqiqadan so‘ng sayt tayyor: `https://<foydalanuvchi>.github.io/<repo>/`
 
-> Manual usul ham bor: **Settings → Pages → Source: Deploy from a branch → main → / (root)**.
+> ⚠️ Pages'ni workflow o‘zi yoqa olmaydi — GitHub buni `GITHUB_TOKEN` orqali taqiqlaydi
+> (`Resource not accessible by integration`). Shuning uchun 2-qadamni bir marta qo‘lda bajarish shart.
+> Agar bu qadam bajarilmasa, `deploy` job'i "Get Pages site failed" xatosi bilan to‘xtaydi
+> (testlar baribir o‘tadi).
+
+> Alternativa: **Settings → Pages → Source: Deploy from a branch → `main` → `/ (root)`** —
+> bu holda workflow kerak emas, GitHub saytni to‘g‘ridan-to‘g‘ri branchdan joylaydi.
 
 ### 3-qadam. Telefon/kompyuterga dastur sifatida o‘rnatish (PWA)
 - **Chrome / Edge (kompyuter):** manzil qatoridagi ⊕ **Install** belgisini bosing →

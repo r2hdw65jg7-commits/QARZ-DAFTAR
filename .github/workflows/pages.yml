@@ -33,10 +33,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # DIQQAT: bundan oldin bir marta repo Settings -> Pages -> Source: "GitHub Actions"
+      # tanlangan bo'lishi kerak (buni token orqali avtomatik yoqib bo'lmaydi).
       - uses: actions/configure-pages@v5
-        with:
-          # Pages sozlamalarda yoqilmagan bo'lsa, avtomatik yoqadi
-          enablement: true
       - name: Saytni yuklash
         uses: actions/upload-pages-artifact@v3
         with:
